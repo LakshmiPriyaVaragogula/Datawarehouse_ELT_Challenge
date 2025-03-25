@@ -37,23 +37,23 @@ For Each Fact Table:
 1.	Click on the Fact Table → Go to the Columns section
 2.	Set the Primary Key (PK) (e.g., average_cost_id for fact_averagecosts)
 3.	Add Foreign Keys (FKs) that reference dimension tables
-o	Example for fact_transactions:
-	sku_id (FK → hier_prod.sku_id)
-	fsclwk_id (FK → hier_clnd.fsclwk_id)
-	pos_site_id (FK → hier_possite.pos_site_id)
-	rtlloc_id (FK → hier_rtlloc.rtlloc_id)
+	Example for fact_transactions:
+	sku_id (FK → hier_prod.sku_id)
+	fsclwk_id (FK → hier_clnd.fsclwk_id)
+	pos_site_id (FK → hier_possite.pos_site_id)
+	rtlloc_id (FK → hier_rtlloc.rtlloc_id)
 ________________________________________
 Step 4: Connect Fact Tables to Dimension Tables
 1.	Go to the Connector Tool (Relationships Tool)
 o	In Crow’s Foot Notation, relationships are represented with lines.
 2.	Click & Drag from Fact Table FK to Dimension Table PK
-o	Example:
-	Drag from fact_transactions.sku_id → hier_prod.sku_id
-	Drag from fact_transactions.fsclwk_id → hier_clnd.fsclwk_id
+	Example:
+	Drag from fact_transactions.sku_id → hier_prod.sku_id
+	Drag from fact_transactions.fsclwk_id → hier_clnd.fsclwk_id
 3.	Choose Relationship Type
-o	In Crow’s Foot Notation, use:
-	One-to-Many (1:M) → Dimension Table (1) to Fact Table (M)
-	Example: hier_prod.sku_id (1) → fact_transactions.sku_id (M)
+	In Crow’s Foot Notation, use:
+	One-to-Many (1:M) → Dimension Table (1) to Fact Table (M)
+	Example: hier_prod.sku_id (1) → fact_transactions.sku_id (M)
 4.	Repeat for all other dimension tables.
 ________________________________________
 Step 5: Verify the Diagram
@@ -64,16 +64,16 @@ Step 5: Verify the Diagram
 After keen analysis with raw data where each table contains it’s id and label names etc., 
 As per my understanding with given data In the Entity RelationShip diagram you will see two fact tables with dimensions, Hier(DIM) tables  as listed below 
 
-1)fact.avergecosts.dlm
+ 1)fact.avergecosts.dlm
  2)fact.transactions.dlm
  3)hier.clnd.dlm
  4)hier.hldy.dlm
  5)hier.invloc.dlm 
-6)hier.invstatus.dlm
+ 6)hier.invstatus.dlm
  7)hier.possite.dlm 
-8)hier.pricestate.dlm
+ 8)hier.pricestate.dlm
  9)hier.prod.dlm 
-10)hier.rtlloc.dlm
+ 10)hier.rtlloc.dlm
 
 PREREQUISITES for implementing pipeline:
 -A Snowflake account with required permissions.
@@ -93,7 +93,7 @@ PREREQUISITES for implementing pipeline:
 •	Schedule the Update Task every 5 minutes.
 
 
-STEP :1 Using INFER SCHEMA 
+1. Using INFER SCHEMA 
 I am using snowflake here , as I ended with free trail account .For now, I have used my working snowflake account and it does work with below code:
 Considering FACT_TRANSACTIONS AND HIER_PRODUCTS for my pipeline implementation
 For fact_transactions:
