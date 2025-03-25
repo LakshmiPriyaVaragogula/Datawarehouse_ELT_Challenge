@@ -76,10 +76,11 @@ As per my understanding with given data In the Entity RelationShip diagram you w
  10)hier.rtlloc.dlm
 
 PREREQUISITES for implementing pipeline:
--A Snowflake account with required permissions.
-- AWS S3 bucket access.
-- Snowflake external stage configured.
-- 
+
+1)A Snowflake account with required permissions.
+2)AWS S3 bucket access.
+3)Snowflake external stage configured.
+  
 2) DATAPIPELINE STEPS
 •	Infer Schema from raw .dlm file.
 •	Auto-Load Data into Landing Tables from S3 via Snowpipe.
